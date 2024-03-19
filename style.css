@@ -1,0 +1,40 @@
+body {background: rgb(224, 220, 213);
+    font-family: Arial, Helvetica, sans-serif;
+    /* padrão navegador 8px */
+    text-align: center;
+    margin: 0;
+}
+h1 {font-size: 50px;}
+
+#hero {
+    width: 592px;
+    margin: 0 auto 72px;
+    /**
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    **/
+}
+
+#hero img {
+    margin-bottom: 72px;
+}
+h1 {
+font-size: large;
+font-size:  49px;
+line-height: 56px;
+font-weight: normal;
+
+margin-bottom: 32px;
+
+}
+
+h1 span {
+    color: blue;
+} 
+#footer {
+    height: 72px;
+    display: flex;
+    justify-content: center;
+}
