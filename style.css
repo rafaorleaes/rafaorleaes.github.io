@@ -30,15 +30,7 @@ main {
     justify-content: space-between;
 }
 
-main section {
-    flex: 1;
-    margin-right: 20px;
-}
 
-main .foto {
-    flex: 1;
-    max-width: 100%;
-}
 
 button:hover {
     background: #407764;
@@ -54,8 +46,4 @@ footer {
 a {
     text-decoration: none;
     color: #29533B;
-}
-
-span {
-    color: #258450;
 }
