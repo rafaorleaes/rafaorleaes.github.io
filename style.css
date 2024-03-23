@@ -1,0 +1,172 @@
+body, h1, h2, p, ul, li, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+.menu-bg {
+    background: #486623;
+}
+
+.menu {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+}
+
+.menu-logo a {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.menu-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-nav a {
+    font-size: 1.25em;
+    display: block;
+    padding: 10px;
+}
+
+
+.introducao {
+    font-size: 3em;
+    line-height: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 10px;
+    color: #555D4C;
+}
+
+.sobre {
+    border-top: 2px solid #486623;
+    border-bottom: 2px solid #486623;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sobre-info {
+    flex: 2 1 300px;
+    margin: 0 10px;
+}
+
+.sobre-info h1 {
+    font-size: 3em;
+    margin-bottom: .5em;
+    color: #555D4C;
+}
+
+.sobre-info p {
+    font-size: 1.25em;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    color: #7c7c7c;
+}
+
+.sobre-img {
+    flex: 1 1 160px;
+    margin: 0 10px;
+}
+
+.produtos {
+    max-width: 960px;
+    margin: 60px auto;
+}
+
+.produtos h1 {
+    font-size: 3em;
+    margin: 0 10px 60px 10px;
+    color: #7c7c7c;
+}
+
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.produtos-item {
+    flex: 1 1 175px;
+    margin: 10px;
+}
+
+.produtos-item h2 {
+    font-size: 3em;
+    color: #a4a4a4;
+    background: #f7f7f7;
+    padding: 60px 20px;
+}
+
+.max {
+    border-top: 8px solid #3A6604;
+}
+
+.alg-mic {
+    border-top: 8px solid #88B257;
+}
+
+.juice {
+    border-top: 8px solid #4A701C;
+}
+
+.preco {
+    background: #f7f7f7;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.preco-item {
+    flex: 1 1 260px;
+    border: 4px solid white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.footer {
+    display: flex;
+    background: #486623;
+    height: 200px;
+    align-items: center;
+}
+
+.footer p {
+    flex: 1;
+    text-align: center;
+    font-size: 2.25em;
+    color: #FFFFFF;
+}
+
