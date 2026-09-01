@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rafael Orleães — QA Engineer. Testes de API, automação e segurança, com evidência honesta acima de métrica inflada." />
-  <meta name="keywords" content="QA, teste de API, automação, C#, SQL Server, Playwright, Maestro, k6, segurança, OWASP" />
+  <meta name="description" content="Rafael Orleães — QA Engineer. Automação de testes, API e segurança. Aberto a novas oportunidades." />
+  <meta name="keywords" content="QA, QA Engineer, automação de testes, teste de API, Playwright, Cypress, C#, SQL Server, TypeScript, k6, OWASP, CI/CD" />
   <meta property="og:title" content="Rafael Orleães · QA Engineer" />
-  <meta property="og:description" content="QA com mentalidade de engenharia — evidência honesta acima de métrica inflada." />
+  <meta property="og:description" content="QA Engineer — automação, API e segurança. Evidência acima de promessa." />
   <meta property="og:type" content="website" />
   <title>Rafael Orleães · QA Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,32 +14,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root{
-      /* paleta fria, quase clínica — não creme quente */
-      --paper:#F6F7F5;
-      --paper-2:#EDEFEB;
-      --ink:#1A1C1A;
-      --ink-2:#606360;
-      --ink-3:#919590;
-      --line:#E1E3DD;
-      --line-2:#CFD2CB;
-      /* verde profundo e raro — sinal de "pass", nunca preenchimento chapado */
-      --accent:#2E6B4F;
-      --accent-soft:#5E8C74;
-
+      --paper:#F6F7F5; --paper-2:#EDEFEB;
+      --ink:#1A1C1A; --ink-2:#606360; --ink-3:#919590;
+      --line:#E1E3DD; --line-2:#CFD2CB;
+      --accent:#2E6B4F; --accent-soft:#5E8C74;
       --font-display:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
       --font-sans:'Geist',-apple-system,BlinkMacSystemFont,sans-serif;
       --font-mono:'JetBrains Mono','Fira Code',monospace;
-      --maxw:1080px;
+      --maxw:1000px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{
-      background:var(--paper);color:var(--ink);
-      font-family:var(--font-sans);
-      font-size:clamp(.98rem,.94rem + .18vw,1.04rem);
-      font-weight:400;line-height:1.62;
-      overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-    }
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);
+      font-size:clamp(.98rem,.94rem + .18vw,1.04rem);line-height:1.62;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     ::selection{background:var(--accent);color:var(--paper)}
     ::-webkit-scrollbar{width:9px}
     ::-webkit-scrollbar-track{background:var(--paper)}
@@ -47,153 +35,125 @@
     a{color:inherit;text-decoration:none}
 
     .container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.35rem,5vw,2.5rem)}
-    section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
+    section{padding:clamp(4rem,9vw,7rem) 0;position:relative}
 
-    /* rótulo mono — a personalidade vive aqui */
-    .eyebrow{
-      font-family:var(--font-mono);font-size:.72rem;font-weight:500;
+    .eyebrow{font-family:var(--font-mono);font-size:.72rem;font-weight:500;
       letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-      display:inline-flex;align-items:center;gap:.55rem;
-    }
+      display:inline-flex;align-items:center;gap:.55rem}
     .eyebrow::before{content:'';width:14px;height:1px;background:var(--accent)}
-    .section-head{margin-bottom:clamp(2.25rem,5vw,3.5rem)}
-    .section-head h2{
-      font-family:var(--font-display);font-weight:600;
-      font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.05;
-      letter-spacing:-.02em;margin-top:1rem;max-width:20ch;
-    }
+    .section-head{margin-bottom:clamp(2rem,5vw,3rem)}
+    .section-head h2{font-family:var(--font-display);font-weight:600;
+      font-size:clamp(1.55rem,3.5vw,2.3rem);line-height:1.05;
+      letter-spacing:-.02em;margin-top:1rem;max-width:20ch}
 
     /* NAV */
-    nav{position:sticky;top:0;z-index:50;
-      background:color-mix(in srgb,var(--paper) 88%,transparent);
+    nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
       backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav-inner{max-width:var(--maxw);margin:0 auto;
-      padding:1rem clamp(1.35rem,5vw,2.5rem);
+    .nav-inner{max-width:var(--maxw);margin:0 auto;padding:1rem clamp(1.35rem,5vw,2.5rem);
       display:flex;align-items:center;justify-content:space-between;gap:1rem}
     .nav-logo{font-family:var(--font-mono);font-weight:600;font-size:.86rem;letter-spacing:-.01em}
     .nav-logo b{color:var(--accent);font-weight:600}
     .nav-links{list-style:none;display:flex;gap:1.6rem}
-    .nav-links a{font-family:var(--font-mono);font-size:.76rem;letter-spacing:.02em;
-      color:var(--ink-2);transition:color .18s}
+    .nav-links a{font-family:var(--font-mono);font-size:.76rem;color:var(--ink-2);transition:color .18s}
     .nav-links a:hover{color:var(--ink)}
     .nav-links a.active{color:var(--accent)}
     .hamburger{display:none;background:none;border:none;color:var(--ink);
-      font-size:1.15rem;cursor:pointer;line-height:1;font-family:var(--font-mono)}
+      font-size:.9rem;cursor:pointer;font-family:var(--font-mono)}
     .nav-mobile{display:none;flex-direction:column;border-top:1px solid var(--line)}
-    .nav-mobile a{padding:.85rem clamp(1.35rem,5vw,2.5rem);
-      font-family:var(--font-mono);font-size:.8rem;color:var(--ink-2);
-      border-bottom:1px solid var(--line)}
+    .nav-mobile a{padding:.85rem clamp(1.35rem,5vw,2.5rem);font-family:var(--font-mono);
+      font-size:.8rem;color:var(--ink-2);border-bottom:1px solid var(--line)}
     .nav-mobile.open{display:flex}
 
     /* HERO */
-    #hero{padding-top:clamp(4rem,10vw,7rem);padding-bottom:clamp(3rem,7vw,5rem)}
-    .hero-h1{
-      font-family:var(--font-display);font-weight:600;
-      font-size:clamp(2rem,5vw,3.15rem);line-height:1.06;
-      letter-spacing:-.025em;max-width:19ch;margin:1.5rem 0 1.75rem;
-      opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) .05s forwards;
-    }
+    #hero{padding-top:clamp(3.5rem,9vw,6rem);padding-bottom:clamp(3rem,7vw,5rem)}
+    .avail{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-mono);
+      font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+      color:var(--accent);border:1px solid var(--accent-soft);padding:.35rem .7rem;margin-bottom:1.5rem}
+    .avail .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);
+      animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{50%{opacity:.35}}
+    .hero-h1{font-family:var(--font-display);font-weight:600;
+      font-size:clamp(2rem,5vw,3.1rem);line-height:1.06;letter-spacing:-.025em;
+      max-width:20ch;margin:0 0 1.5rem;
+      opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) .05s forwards}
     @keyframes rise{to{opacity:1;transform:none}}
     .hero-h1 em{font-style:normal;color:var(--accent)}
-    .hero-sub{font-size:clamp(1.02rem,.98rem + .35vw,1.18rem);color:var(--ink-2);
-      max-width:54ch;line-height:1.55;
+    .hero-sub{font-size:clamp(1.02rem,.98rem + .35vw,1.16rem);color:var(--ink-2);max-width:56ch;line-height:1.55;
       opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) .18s forwards}
-    .hero-actions{display:flex;gap:1.75rem;flex-wrap:wrap;margin-top:2.25rem;
+    .hero-actions{display:flex;gap:1.75rem;flex-wrap:wrap;margin-top:2rem;
       opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) .3s forwards}
-    .link-arrow{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.02em;
-      color:var(--ink);border-bottom:1px solid var(--line-2);padding-bottom:.28rem;transition:.2s}
+    .link-arrow{font-family:var(--font-mono);font-size:.82rem;color:var(--ink);
+      border-bottom:1px solid var(--line-2);padding-bottom:.28rem;transition:.2s}
     .link-arrow:hover{color:var(--accent);border-color:var(--accent)}
-    /* meta line — substitui os números gigantes */
-    .hero-meta{margin-top:clamp(3rem,7vw,4.5rem);border-top:1px solid var(--line);
+    .hero-meta{margin-top:clamp(2.75rem,6vw,4rem);border-top:1px solid var(--line);
       display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-    .hero-meta > div{background:var(--paper);padding:1.4rem .25rem 0}
+    .hero-meta > div{background:var(--paper);padding:1.35rem .25rem 0}
     .hero-meta dt{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;
       text-transform:uppercase;color:var(--ink-3);margin-bottom:.5rem}
-    .hero-meta dd{font-family:var(--font-display);font-size:.98rem;font-weight:500;letter-spacing:-.01em;line-height:1.35}
+    .hero-meta dd{font-family:var(--font-display);font-size:.96rem;font-weight:500;letter-spacing:-.01em;line-height:1.35}
 
     /* SOBRE */
-    .about-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:clamp(2rem,6vw,4.5rem);align-items:start}
-    .about-text p{margin-bottom:1.15rem;color:var(--ink);max-width:58ch}
-    .about-text p:last-child{margin-bottom:0}
-    .about-text strong{font-weight:600}
-    .about-meta{border-top:1px solid var(--ink)}
-    .about-meta .row{display:flex;justify-content:space-between;gap:1rem;
-      padding:.85rem 0;border-bottom:1px solid var(--line)}
-    .about-meta .k{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;
-      text-transform:uppercase;color:var(--ink-2)}
-    .about-meta .v{font-family:var(--font-mono);font-size:.78rem;text-align:right}
-    .about-meta .v.hl{color:var(--accent)}
+    .about p{margin-bottom:1.1rem;color:var(--ink);max-width:62ch}
+    .about p:last-child{margin-bottom:0}
+    .about strong{font-weight:600}
 
-    /* SKILLS — lista agrupada, não grade de cards */
+    /* SKILLS — grupos compactos de chips */
     .skills{border-top:1px solid var(--line)}
-    .skill-row{display:grid;grid-template-columns:180px 1fr;gap:1.5rem;
-      padding:1.35rem 0;border-bottom:1px solid var(--line);align-items:baseline}
-    .skill-cat{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;
-      text-transform:uppercase;color:var(--ink-2);padding-top:.15rem}
-    .skill-items{display:flex;flex-direction:column;gap:.7rem}
-    .skill-item{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-    .skill-name{font-family:var(--font-display);font-weight:500;font-size:1.02rem;letter-spacing:-.01em}
-    /* marcador de maturidade — assinatura: status estilo relatório de teste */
-    .maturity{display:inline-flex;align-items:center;gap:.5rem;
-      font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--ink-3);white-space:nowrap}
-    .mk{width:8px;height:8px;border:1px solid var(--ink-3);flex-shrink:0}
-    .maturity.lv-core .mk{background:var(--accent);border-color:var(--accent)}
-    .maturity.lv-core{color:var(--accent)}
-    .maturity.lv-use .mk{background:var(--ink);border-color:var(--ink)}
-    .maturity.lv-use{color:var(--ink-2)}
-    .maturity.lv-learn .mk{background:linear-gradient(135deg,var(--ink) 50%,transparent 50%);border-color:var(--ink-2)}
-    .maturity.lv-prev .mk{background:transparent}
+    .skill-row{display:grid;grid-template-columns:190px 1fr;gap:1.5rem;
+      padding:1.25rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .skill-cat{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.07em;
+      text-transform:uppercase;color:var(--ink-2)}
+    .skill-cat .lv{display:block;color:var(--accent);font-size:.66rem;margin-top:.25rem;letter-spacing:.05em}
+    .chips{display:flex;flex-wrap:wrap;gap:.4rem}
+    .chip{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.01em;
+      color:var(--ink);border:1px solid var(--line-2);padding:.3rem .6rem;background:var(--paper)}
+    .chip.core{border-color:var(--accent-soft);color:var(--accent)}
 
-    /* PROJETOS — lista tipográfica limpa */
-    .proj-note{color:var(--ink-2);max-width:60ch;margin-bottom:clamp(2rem,5vw,3rem);font-size:.98rem}
+    /* PROJETOS */
+    .proj-note{color:var(--ink-2);max-width:60ch;margin-bottom:clamp(1.75rem,4vw,2.5rem);font-size:.96rem}
     .proj-list{border-top:1px solid var(--ink)}
-    .proj{display:grid;grid-template-columns:1fr;gap:.55rem;
-      padding:1.65rem 0;border-bottom:1px solid var(--line);transition:padding-left .25s ease}
+    .proj{display:grid;gap:.5rem;padding:1.55rem 0;border-bottom:1px solid var(--line);transition:padding-left .25s ease}
     .proj:hover{padding-left:.6rem}
-    .proj-top{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap}
+    .proj-top{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
     .proj-kind{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;
       text-transform:uppercase;color:var(--accent);flex-shrink:0}
-    .proj-title{font-family:var(--font-display);font-weight:600;font-size:1.22rem;letter-spacing:-.015em}
-    .proj-desc{color:var(--ink-2);max-width:66ch;font-size:.96rem;line-height:1.55}
+    .proj-title{font-family:var(--font-display);font-weight:600;font-size:1.2rem;letter-spacing:-.015em}
+    .proj-desc{color:var(--ink-2);max-width:68ch;font-size:.95rem;line-height:1.55}
     .proj-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem}
-    .tag{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.02em;
-      color:var(--ink-3);border:1px solid var(--line-2);padding:.15rem .45rem}
+    .tag{font-family:var(--font-mono);font-size:.67rem;color:var(--ink-3);
+      border:1px solid var(--line-2);padding:.15rem .45rem}
 
     /* EXPERIÊNCIA */
     .timeline{border-top:1px solid var(--line)}
-    .tl{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;
-      padding:1.85rem 0;border-bottom:1px solid var(--line)}
-    .tl-date{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.04em;
-      color:var(--accent);padding-top:.2rem}
+    .tl{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;padding:1.65rem 0;border-bottom:1px solid var(--line)}
+    .tl-date{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:var(--accent);padding-top:.2rem}
     .tl-date.muted{color:var(--ink-3)}
-    .tl-role{font-family:var(--font-display);font-weight:600;font-size:1.18rem;letter-spacing:-.015em;line-height:1.15}
-    .tl-org{font-family:var(--font-mono);font-size:.76rem;color:var(--ink-2);margin:.35rem 0 .75rem}
-    .tl-desc{color:var(--ink);max-width:62ch;margin-bottom:.8rem;font-size:.97rem}
+    .tl-role{font-family:var(--font-display);font-weight:600;font-size:1.15rem;letter-spacing:-.015em;line-height:1.15}
+    .tl-org{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);margin:.35rem 0 .7rem}
+    .tl-desc{color:var(--ink);max-width:64ch;margin-bottom:.75rem;font-size:.95rem}
     .tl-tags{display:flex;flex-wrap:wrap;gap:.35rem}
 
     /* CERTIFICAÇÕES */
     .certs{border-top:1px solid var(--line)}
-    .cert{display:flex;align-items:center;gap:1rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
-    .cert-code{font-family:var(--font-mono);font-weight:600;font-size:.72rem;
-      width:52px;flex-shrink:0;color:var(--ink-2)}
+    .cert{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+    .cert-code{font-family:var(--font-mono);font-weight:600;font-size:.72rem;width:52px;flex-shrink:0;color:var(--ink-2)}
     .cert-body{flex:1;min-width:0}
     .cert-name{font-family:var(--font-display);font-weight:500;font-size:1rem;letter-spacing:-.01em}
     .cert-iss{font-family:var(--font-mono);font-size:.7rem;color:var(--ink-3);margin-top:.15rem}
-    .cert-st{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.04em;white-space:nowrap;color:var(--ink-2)}
+    .cert-st{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.03em;white-space:nowrap;color:var(--ink-2)}
     .cert-st.wip{color:var(--accent)}
 
     /* CONTATO */
     .contact-h{font-family:var(--font-display);font-weight:600;
-      font-size:clamp(1.9rem,5vw,3rem);letter-spacing:-.025em;line-height:1.05;margin-bottom:1.15rem}
-    .contact-sub{color:var(--ink-2);max-width:50ch;margin-bottom:2.5rem;font-size:1.05rem}
+      font-size:clamp(1.8rem,5vw,2.9rem);letter-spacing:-.025em;line-height:1.05;margin-bottom:1.1rem}
+    .contact-sub{color:var(--ink-2);max-width:52ch;margin-bottom:2.25rem;font-size:1.02rem}
     .contact-links{border-top:1px solid var(--line)}
-    .contact-links a{display:flex;align-items:center;gap:.75rem;
-      font-family:var(--font-mono);font-size:clamp(.9rem,.85rem + .35vw,1.1rem);
-      padding:1.1rem 0;border-bottom:1px solid var(--line);transition:.22s;color:var(--ink)}
+    .contact-links a{display:flex;align-items:center;gap:.75rem;font-family:var(--font-mono);
+      font-size:clamp(.9rem,.85rem + .35vw,1.08rem);padding:1.05rem 0;
+      border-bottom:1px solid var(--line);transition:.22s;color:var(--ink)}
     .contact-links a:hover{color:var(--accent);padding-left:.6rem}
     .contact-links .ico{color:var(--ink-3);font-size:.85em}
 
-    /* FOOTER */
     footer{border-top:1px solid var(--line);padding:2.25rem 0}
     .foot{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.35rem,5vw,2.5rem);
       font-family:var(--font-mono);font-size:.72rem;color:var(--ink-3);line-height:1.9;letter-spacing:.02em}
@@ -207,24 +167,21 @@
     @media (max-width:780px){
       .nav-links{display:none}
       .hamburger{display:block}
-      .about-grid{grid-template-columns:1fr;gap:2.5rem}
       .hero-meta{grid-template-columns:1fr}
-      .hero-meta > div{padding:1.15rem 0 .1rem;border-top:1px solid var(--line)}
+      .hero-meta > div{padding:1.1rem 0 .1rem;border-top:1px solid var(--line)}
       .hero-meta > div:first-child{border-top:none}
-      .skill-row{grid-template-columns:1fr;gap:.85rem}
-      .tl{grid-template-columns:1fr;gap:.6rem}
+      .skill-row{grid-template-columns:1fr;gap:.7rem}
+      .tl{grid-template-columns:1fr;gap:.5rem}
     }
     @media (prefers-reduced-motion:reduce){
       *{animation:none!important;transition:none!important}
-      .reveal{opacity:1;transform:none}
-      .hero-h1,.hero-sub,.hero-actions{opacity:1;transform:none}
+      .reveal,.hero-h1,.hero-sub,.hero-actions{opacity:1;transform:none}
       html{scroll-behavior:auto}
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">rafael<b>.qa</b></a>
@@ -246,157 +203,114 @@
   </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section id="hero">
   <div class="container">
-    <span class="eyebrow">QA Engineer · API · automação · segurança</span>
-    <h1 class="hero-h1">Qualidade de software com <em>mentalidade de engenharia</em>.</h1>
+    <span class="avail"><span class="dot"></span>aberto a novas oportunidades</span>
+    <br>
+    <span class="eyebrow">QA Engineer · automação · API · segurança</span>
+    <h1 class="hero-h1">Rafael Orleães — QA com <em>mentalidade de engenharia</em>.</h1>
     <p class="hero-sub">
-      Rafael Orleães — QA analítico com foco em testes de API (C#/ASP.NET, SQL Server),
-      contrato, autorização e segurança. Do card ao harness, como QA solo.
+      Automação de testes E2E e de API, testes de contrato, autorização e segurança.
+      Stack C#/ASP.NET, SQL Server, TypeScript e Playwright — do card ao teste executável.
     </p>
     <div class="hero-actions">
-      <a href="#projetos" class="link-arrow">ver o trabalho →</a>
+      <a href="#projetos" class="link-arrow">ver projetos →</a>
       <a href="#contato" class="link-arrow">entrar em contato →</a>
     </div>
 
     <dl class="hero-meta reveal">
-      <div>
-        <dt>atuação</dt>
-        <dd>QA solo · ownership ponta a ponta</dd>
-      </div>
-      <div>
-        <dt>foco</dt>
-        <dd>API · contrato, autorização, segurança</dd>
-      </div>
-      <div>
-        <dt>método</dt>
-        <dd>do runbook ao harness</dd>
-      </div>
+      <div><dt>foco</dt><dd>Automação · API · segurança</dd></div>
+      <div><dt>stack principal</dt><dd>C# · TypeScript · SQL Server</dd></div>
+      <div><dt>abordagem</dt><dd>Evidência acima de promessa</dd></div>
     </dl>
   </div>
 </section>
 
-<!-- ── SOBRE ── -->
+<!-- SOBRE -->
 <section id="sobre">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">sobre</span>
       <h2>QA com visão de engenharia</h2>
     </div>
-
-    <div class="about-grid reveal">
-      <div class="about-text">
-        <p>
-          Sou <strong>Rafael Orleães</strong>, QA analítico atuando sozinho como dono da qualidade
-          num produto digital. Qualidade, pra mim, não é etapa — é propriedade do
-          sistema inteiro.
-        </p>
-        <p>
-          Meu trabalho é API-first: testo o backend em <strong>C#/ASP.NET e SQL Server</strong>,
-          construí um harness próprio com cache de token por role e asserções em banco, automatizo
-          E2E com Playwright, rodo carga com k6 e faço testes de contrato e de autorização.
-          Transformo cards do Jira em runbooks executáveis.
-        </p>
-        <p>
-          Princípio central: <strong>evidência honesta acima de métrica inflada</strong>. Prefiro
-          mostrar método, decisão e rigor a exibir número que não se sustenta.
-        </p>
-      </div>
-      <div class="about-meta">
-        <div class="row"><span class="k">localização</span><span class="v">Santa Catarina, BR</span></div>
-        <div class="row"><span class="k">foco atual</span><span class="v hl">API · segurança · automação</span></div>
-        <div class="row"><span class="k">atuação</span><span class="v hl">QA solo · ponta a ponta</span></div>
-        <div class="row"><span class="k">stack</span><span class="v">C# · SQL Server · RN</span></div>
-        <div class="row"><span class="k">linkedin</span><span class="v hl">/in/rafaelorleaes</span></div>
-      </div>
+    <div class="about reveal">
+      <p>
+        Sou <strong>Rafael Orleães</strong>, QA Engineer com foco em automação de testes,
+        API e segurança. Trabalho API-first: testo backend em C#/ASP.NET e SQL Server,
+        automatizo E2E com Playwright, valido contrato e autorização, e transformo cards do
+        Jira em runbooks executáveis.
+      </p>
+      <p>
+        Princípio central: <strong>evidência honesta acima de métrica inflada</strong> —
+        prefiro mostrar método, decisão e rigor a exibir número que não se sustenta.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ── SKILLS ── -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">stack &amp; ferramentas</span>
       <h2>Habilidades técnicas</h2>
     </div>
-
     <div class="skills reveal">
       <div class="skill-row">
-        <div class="skill-cat">api testing</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Postman / Newman</span><span class="maturity lv-core"><span class="mk"></span>primário</span></div>
-          <div class="skill-item"><span class="skill-name">C# · RestSharp · FluentAssertions</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
+        <div class="skill-cat">automação de testes</div>
+        <div class="chips">
+          <span class="chip core">Playwright</span>
+          <span class="chip">Cypress</span>
+          <span class="chip">k6</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">e2e · web</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Playwright · Module Layer</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">e2e · mobile</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Maestro</span><span class="maturity lv-learn"><span class="mk"></span>em estudo</span></div>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">banco de dados</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">SQL Server · Dapper</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">performance</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">k6</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">ci/cd · devops</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Azure DevOps Pipelines</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-          <div class="skill-item"><span class="skill-name">GitLab CI</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">test management</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Jira · Xray · Rovo</span><span class="maturity lv-core"><span class="mk"></span>primário</span></div>
+        <div class="skill-cat">api &amp; backend</div>
+        <div class="chips">
+          <span class="chip core">Postman · Newman</span>
+          <span class="chip">REST</span>
+          <span class="chip">C# · RestSharp</span>
+          <span class="chip">FluentAssertions</span>
+          <span class="chip">SQL Server · Dapper</span>
         </div>
       </div>
       <div class="skill-row">
         <div class="skill-cat">linguagens</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">TypeScript / JavaScript</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
-          <div class="skill-item"><span class="skill-name">C#</span><span class="maturity lv-learn"><span class="mk"></span>em evolução</span></div>
+        <div class="chips">
+          <span class="chip core">TypeScript / JavaScript</span>
+          <span class="chip">C#</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">segurança</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Threat modeling · OWASP</span><span class="maturity lv-use"><span class="mk"></span>em uso</span></div>
+        <div class="skill-cat">ci/cd &amp; gestão</div>
+        <div class="chips">
+          <span class="chip">Azure DevOps</span>
+          <span class="chip">GitLab CI</span>
+          <span class="chip">Git</span>
+          <span class="chip">Jira · Xray</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">versionamento</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Git</span><span class="maturity lv-core"><span class="mk"></span>primário</span></div>
+        <div class="skill-cat">segurança &amp; contrato</div>
+        <div class="chips">
+          <span class="chip">OWASP</span>
+          <span class="chip">Threat modeling</span>
+          <span class="chip">Testes de autorização (IDOR)</span>
+          <span class="chip">JSON Schema</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">base anterior</div>
-        <div class="skill-items">
-          <div class="skill-item"><span class="skill-name">Cypress</span><span class="maturity lv-prev"><span class="mk"></span>projeto anterior</span></div>
+        <div class="skill-cat">mobile<span class="lv">em estudo</span></div>
+        <div class="chips">
+          <span class="chip">Maestro</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PROJETOS ── -->
+<!-- PROJETOS -->
 <section id="projetos">
   <div class="container">
     <div class="section-head reveal">
@@ -404,143 +318,94 @@
       <h2>Trabalho técnico</h2>
     </div>
     <p class="proj-note reveal">
-      Detalhes sanitizados por confidencialidade. O que está aqui é o método e a arquitetura —
-      não dados do produto.
+      Detalhes sanitizados por confidencialidade — o que está aqui é o método e a arquitetura, não dados do produto.
     </p>
-
     <div class="proj-list reveal">
       <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">api · harness</span>
-          <span class="proj-title">Harness de API autenticado</span>
-        </div>
-        <p class="proj-desc">Cliente HTTP com cache de token por role, asserções diretas em SQL Server, runner declarativo de fluxos e fixtures Playwright. Slots de endpoint deixados como TODO — nada inventado.</p>
-        <div class="proj-tags"><span class="tag">typescript</span><span class="tag">playwright</span><span class="tag">sql-server</span><span class="tag">http-client</span></div>
+        <div class="proj-top"><span class="proj-kind">api · arquitetura</span><span class="proj-title">Harness de API autenticado</span></div>
+        <p class="proj-desc">Cliente HTTP com cache de token por role, asserções diretas em SQL Server, runner declarativo de fluxos e fixtures Playwright.</p>
+        <div class="proj-tags"><span class="tag">typescript</span><span class="tag">playwright</span><span class="tag">sql-server</span></div>
       </div>
-
       <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">processo · runbook</span>
-          <span class="proj-title">Do card ao teste executável</span>
-        </div>
-        <p class="proj-desc">Leio o card, derivo o critério de aceite, monto pré-condições, dados e tokens por role, e sequencio o teste scriptado antes do exploratório.</p>
-        <div class="proj-tags"><span class="tag">jira</span><span class="tag">rovo</span><span class="tag">runbook</span><span class="tag">sql</span></div>
-      </div>
-
-      <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">api · contrato &amp; segurança</span>
-          <span class="proj-title">Testes de contrato e autorização</span>
-        </div>
+        <div class="proj-top"><span class="proj-kind">segurança</span><span class="proj-title">Testes de contrato e autorização</span></div>
         <p class="proj-desc">Validação de schema, ProblemDetails (RFC 9457) e checagem de autorização por role — IDOR, acesso sem credencial e exposição de dado sensível.</p>
-        <div class="proj-tags"><span class="tag">rest</span><span class="tag">json-schema</span><span class="tag">owasp</span><span class="tag">rfc-9457</span></div>
+        <div class="proj-tags"><span class="tag">rest</span><span class="tag">json-schema</span><span class="tag">owasp</span></div>
       </div>
-
       <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">performance · k6</span>
-          <span class="proj-title">Carga com thresholds no CI</span>
-        </div>
-        <p class="proj-desc">Cenários de carga com thresholds definidos por SLA e integrados ao pipeline de CI, com relatório de regressão de performance.</p>
-        <div class="proj-tags"><span class="tag">k6</span><span class="tag">performance</span><span class="tag">thresholds</span><span class="tag">ci</span></div>
+        <div class="proj-top"><span class="proj-kind">automação e2e</span><span class="proj-title">Suíte Playwright com Module Layer</span></div>
+        <p class="proj-desc">Page Object estendido com camada de módulos e fixtures reutilizáveis; estrutura pensada para manutenção e escala sendo QA solo.</p>
+        <div class="proj-tags"><span class="tag">playwright</span><span class="tag">typescript</span><span class="tag">page-object</span></div>
       </div>
-
       <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">e2e · playwright</span>
-          <span class="proj-title">Automação com Module Layer</span>
-        </div>
-        <p class="proj-desc">Page Object estendido com camada de módulos e fixtures; rule engine para simular peer-review sendo QA solo.</p>
-        <div class="proj-tags"><span class="tag">playwright</span><span class="tag">typescript</span><span class="tag">page-object</span><span class="tag">fixtures</span></div>
-      </div>
-
-      <div class="proj">
-        <div class="proj-top">
-          <span class="proj-kind">dados · métricas de qa</span>
-          <span class="proj-title">Modelo de tracking de QA</span>
-        </div>
-        <p class="proj-desc">Planilha reconstruída com enum de status correto, cycle time, domínios de negócio e taxa de retorno real (retornados / desfechos fechados).</p>
-        <div class="proj-tags"><span class="tag">metrics</span><span class="tag">cycle-time</span><span class="tag">data-model</span></div>
+        <div class="proj-top"><span class="proj-kind">performance</span><span class="proj-title">Carga e performance com k6</span></div>
+        <p class="proj-desc">Cenários de carga com thresholds por SLA, integrados ao pipeline de CI, com relatório de regressão de performance.</p>
+        <div class="proj-tags"><span class="tag">k6</span><span class="tag">ci</span><span class="tag">thresholds</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── EXPERIÊNCIA ── -->
+<!-- EXPERIÊNCIA -->
 <section id="experiencia">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">trajetória</span>
       <h2>Experiência</h2>
     </div>
-
     <div class="timeline reveal">
       <div class="tl">
-        <div class="tl-date">2025 → presente</div>
+        <div class="tl-date"><!-- PREENCHER: mês/ano de início --> atual</div>
         <div>
-          <div class="tl-role">QA Analyst (solo) · Automação &amp; Segurança de API</div>
-          <div class="tl-org">Produto digital · QA solo <!-- PREENCHER: nomear ou não a empresa --></div>
-          <p class="tl-desc">Dono do QA de ponta a ponta: testes de API (C#/ASP.NET, SQL Server), harness próprio com tokens por role e asserções em banco, automação Playwright, carga com k6 e testes de contrato e autorização. Runbooks a partir de cards no Jira via Rovo.</p>
+          <div class="tl-role">QA Analyst · Automação e Segurança de API</div>
+          <div class="tl-org"><!-- PREENCHER: nome da empresa -->QA solo · ownership ponta a ponta</div>
+          <p class="tl-desc">Testes de API (C#/ASP.NET, SQL Server), harness próprio com tokens por role e asserções em banco, automação Playwright, carga com k6 e testes de contrato e autorização. Runbooks a partir de cards no Jira.</p>
           <div class="tl-tags"><span class="tag">c#</span><span class="tag">sql-server</span><span class="tag">playwright</span><span class="tag">k6</span><span class="tag">azure-devops</span></div>
         </div>
       </div>
-
       <div class="tl">
-        <div class="tl-date muted">202x → 2025 <!-- PREENCHER: datas reais --></div>
+        <div class="tl-date muted"><!-- PREENCHER: período --> anterior</div>
         <div>
           <div class="tl-role">Analista de QA</div>
-          <div class="tl-org"><!-- PREENCHER: empresa anterior --></div>
-          <p class="tl-desc">Testes funcionais, regressão e smoke; casos de teste e documentação de bugs em sprints ágeis. Projeto próprio analistaQA (ex-Argos-QA) integrando Playwright, Cypress e Jira.</p>
-          <div class="tl-tags"><span class="tag">playwright</span><span class="tag">cypress</span><span class="tag">jira</span><span class="tag">sql</span></div>
+          <div class="tl-org"><!-- PREENCHER: nome da empresa --></div>
+          <p class="tl-desc">Testes funcionais, regressão e smoke; casos de teste e documentação de bugs em sprints ágeis. Automação com Playwright e Cypress integrada ao Jira.</p>
+          <div class="tl-tags"><span class="tag">playwright</span><span class="tag">cypress</span><span class="tag">jira</span></div>
         </div>
       </div>
-
       <div class="tl">
-        <div class="tl-date muted">início na área</div>
+        <div class="tl-date muted">início</div>
         <div>
-          <div class="tl-role">QA Júnior / Início de carreira</div>
-          <div class="tl-org">Primeiros passos</div>
-          <p class="tl-desc">Início na qualidade de software. Fundamentos: tipos de teste, criação de casos, bug reports e metodologias ágeis.</p>
-          <div class="tl-tags"><span class="tag">fundamentos-qa</span><span class="tag">agile</span><span class="tag">test-cases</span></div>
+          <div class="tl-role">Início na área de QA</div>
+          <div class="tl-org">Fundamentos e primeiros projetos</div>
+          <p class="tl-desc">Fundamentos de qualidade: tipos de teste, criação de casos, bug reports e metodologias ágeis.</p>
+          <div class="tl-tags"><span class="tag">fundamentos-qa</span><span class="tag">agile</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CERTIFICAÇÕES ── -->
+<!-- CERTIFICAÇÕES -->
 <section id="certificacoes">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">formação</span>
-      <h2>Certificados e estudos</h2>
+      <h2>Certificados</h2>
     </div>
-
     <div class="certs reveal">
       <div class="cert">
         <div class="cert-code">CTFL</div>
-        <div class="cert-body"><div class="cert-name">ISTQB CTFL</div><div class="cert-iss">BSTQB · Fundamentos de Testes</div></div>
+        <div class="cert-body"><div class="cert-name">ISTQB CTFL</div><div class="cert-iss">Fundamentos de Testes · BSTQB</div></div>
         <div class="cert-st wip">em estudo</div>
       </div>
       <div class="cert">
-        <div class="cert-code">CYP</div>
-        <div class="cert-body"><div class="cert-name">Cypress do Zero</div><div class="cert-iss">Udemy · QA Automation</div></div>
-        <div class="cert-st">concluído</div>
-      </div>
-      <div class="cert">
-        <div class="cert-code">GIT</div>
-        <div class="cert-body"><div class="cert-name">Git &amp; GitHub Completo</div><div class="cert-iss">Udemy · DevOps Fundamentals</div></div>
-        <div class="cert-st">concluído</div>
-      </div>
-      <div class="cert">
         <div class="cert-code">API</div>
-        <div class="cert-body"><div class="cert-name">Testes de API com Postman</div><div class="cert-iss">Alura · QA Track</div></div>
+        <div class="cert-body"><div class="cert-name">Testes de API com Postman</div><div class="cert-iss">Alura</div></div>
         <div class="cert-st">concluído</div>
       </div>
       <div class="cert">
-        <div class="cert-code">JS</div>
-        <div class="cert-body"><div class="cert-name">JavaScript para QA</div><div class="cert-iss">DIO / Alura</div></div>
-        <div class="cert-st wip">em progresso</div>
+        <div class="cert-code">CYP</div>
+        <div class="cert-body"><div class="cert-name">Cypress do Zero</div><div class="cert-iss">Udemy</div></div>
+        <div class="cert-st">concluído</div>
       </div>
       <div class="cert">
         <div class="cert-code">CI</div>
@@ -551,15 +416,15 @@
   </div>
 </section>
 
-<!-- ── CONTATO ── -->
+<!-- CONTATO -->
 <section id="contato">
   <div class="container">
     <div class="reveal">
       <span class="eyebrow">contato</span>
-      <h2 class="contact-h" style="margin-top:1rem">Vamos conversar?</h2>
+      <h2 class="contact-h" style="margin-top:1rem">Aberto a novas oportunidades</h2>
       <p class="contact-sub">
-        Perfil técnico de QA com foco em API, automação e segurança. Para conversas técnicas ou profissionais,
-        me encontre no LinkedIn ou por e-mail.
+        Se você procura um QA com foco em automação, API e segurança, vamos conversar.
+        Respondo no LinkedIn ou por e-mail.
       </p>
       <div class="contact-links">
         <a href="https://linkedin.com/in/rafaelorleaes" target="_blank" rel="noopener"><span class="ico">↗</span>linkedin.com/in/rafaelorleaes</a>
@@ -570,12 +435,8 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
-  <p class="foot">
-    <b>rafael orleães</b> · QA Engineer · Santa Catarina, Brasil<br>
-    evidência acima de promessa · rafaorleaes.github.io
-  </p>
+  <p class="foot"><b>rafael orleães</b> · QA Engineer · Santa Catarina, Brasil<br>evidência acima de promessa · rafaorleaes.github.io</p>
 </footer>
 
 <script>
