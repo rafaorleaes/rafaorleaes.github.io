@@ -12,6 +12,10 @@ Página estática de página única que apresenta atuação, stack, projetos e t
 
 Design minimalista, tipografia como identidade (Space Grotesk · Geist · JetBrains Mono) e um princípio que guia o conteúdo: **evidência acima de promessa**.
 
+## Projetos
+
+- [**postman-api-portfolio**](https://github.com/rafaorleaes/postman-api-portfolio) — coleção Postman/Newman + suíte C# (xUnit/RestSharp) contra APIs públicas, com CI no GitHub Actions e relatório publicado no GitHub Pages.
+
 ## Stack
 
 - HTML5 semântico
